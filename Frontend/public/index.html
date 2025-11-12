@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Names List</title>
+</head>
+<body>
+  <h1>Names</h1>
+  <ul id="names"></ul>
+  <script>
+    fetch('/names')
+      .then(response => response.json())
+      .then(data => {
+        const ul = document.getElementById('names');
+        data.forEach(name => {
+          const li = document.createElement('li');
+          li.textContent = name;
+          ul.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
