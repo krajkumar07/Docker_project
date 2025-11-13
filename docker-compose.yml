@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./Backend
+    volumes:
+      - ./Backend:/app
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./Frontend:/app
+    environment:
+      # When frontend runs inside docker-compose it should call the backend service by name
+      - BACKEND_URL=http://backend:5000/api
