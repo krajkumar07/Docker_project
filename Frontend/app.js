@@ -29,7 +29,6 @@ app.get('/names', async (req, res) => {
     res.status(500).json({ error: 'Error fetching names' });
   }
 });
-
 app.listen(3000, () => {
   console.log('Express server running on port 3000');
 });
