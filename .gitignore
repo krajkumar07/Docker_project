@@ -4,4 +4,4 @@ __pycache__/
 .env
 *.log
 .vscode/
-First_deploy.pem
+First_key.pem
